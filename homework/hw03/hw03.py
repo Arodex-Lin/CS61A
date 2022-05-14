@@ -127,7 +127,17 @@ def count_change(total):
     >>> check(HW_SOURCE_FILE, 'count_change', ['While', 'For'])
     True
     """
-    "*** YOUR CODE HERE ***"
+    def help(n,k):
+        if n == 0:
+            return 1
+        elif n <0:
+            return 0
+        elif k ==0:
+            return 0
+        return help(n-k,k) + help(n, k//2)
+    print(help(total, 1024))
+
+
 
 
 def print_move(origin, destination):
@@ -162,7 +172,13 @@ def move_stack(n, start, end):
     Move the top disk from rod 1 to rod 3
     """
     assert 1 <= start <= 3 and 1 <= end <= 3 and start != end, "Bad start/end"
-    "*** YOUR CODE HERE ***"
+    if n ==1 :
+        print_move(start,end)
+        return
+    mid = 6- end -start
+    move_stack(n-1,start,mid)
+    print_move(start,end)
+    move_stack(n-1,mid,end)
 
 
 from operator import sub, mul
