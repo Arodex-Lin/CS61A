@@ -175,7 +175,7 @@ def move_stack(n, start, end):
     if n ==1 :
         print_move(start,end)
         return
-    mid = 6- end -start
+    mid = 6- end -start#总之就是转移到不是起始和终点的柱子上
     move_stack(n-1,start,mid)
     print_move(start,end)
     move_stack(n-1,mid,end)
@@ -193,5 +193,4 @@ def make_anonymous_factorial():
     >>> check(HW_SOURCE_FILE, 'make_anonymous_factorial', ['Assign', 'AugAssign', 'FunctionDef', 'Recursion'])
     True
     """
-    return 'YOUR_EXPRESSION_HERE'
 
